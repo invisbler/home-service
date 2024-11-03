@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #ffffff;
+    }
+    
+    #wrapper {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    color: white;
+    }
+    
+    #sidebar-wrapper {
+    height: 100%;
+    width: 250px;
+    background-color: #fafafa;
+    position: fixed;
+    left: -250px;
+    top: 0;
+    z-index: 1000; /* Ensures the sidebar is on top */
+    transition: all 0.3s ease;
+    
+    }
+    
+    #sidebar-wrapper .list-group {
+    width: 250px;
+    
+    }
+    
+    #page-content-wrapper {
+    width: 100%;
+    padding-left: 20px;
+    transition: all 0.3s ease;
+    }
+    
+    #wrapper.toggled #sidebar-wrapper {
+    left: 0;
+    }
+    
+    #wrapper.toggled #page-content-wrapper {
+    margin-left: 250px;
+    }
+    
+    .list-group-item {
+    background-color: #fafafa;
+    color: rgb(0, 0, 0);
+    border: none;
+    }
+    
+    .list-group-item:hover {
+    background-color: #131413;
+    color: white;
+    }
+    
+    .btn-toggle:hover {
+    background-color: #343a40;
+    color: white;
+    border-color: black;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2; /* Higher z-index to stay clickable when sidebar is open */
+    }
+    .btn-toggle{
+    background-color: white;
+    color: black;
+    border-color: black;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    
+    }
+    
+    .form-group {
+        color: white;
+    }
+    
+    
+    .table {
+        color: white;
+    }
+    
+    .b_btn {
+        background-color: #218838;
+        border-color: #cbcbcc;
+        color: rgb(255, 255, 255);
+    }
+    
+    .b_btn:hover {
+        background-color: rgb(10, 124, 71);
+        border-color: #ffffff;
+        color: rgb(255, 255, 255);
+    }
+    
+    .form-control .btn {
+    padding: 10px;
+    width: 800px;
+    
+    }  /* Banner container */
+    .banner {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+    }
+    
+    /* Banner images */
+    .banner img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+    
+    /* Make the first image visible initially */
+    .banner img.active {
+        opacity: 1;
+    }
+    
+    /* styles.css */
+    body {
+        font-family: Arial, sans-serif;
+    }
+    
+    .navbar-brand {
+        font-weight: bold;
+    }
+    
+    .container {
+        padding-top: 20px;
+    }
+    
+    footer {
+        margin-top: 20px;
+    }
+    
+    
+    /* Index.php Responsive table css  */
+    
+    @media (max-width: 576px) { /* For smaller devices (e.g., phones) */
+        #providers thead {
+            display: none; /* Hide table headers */
+        }
+    
+        #providers tbody tr {
+            display: block; /* Make each row a   block element */
+            margin-bottom: 15px; /* Add spacing between rows */
+        }
+    
+        #providers tbody tr td {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    
+        #providers tbody tr td:before {
+            content: attr(data-label); /* Use the data-label attribute for column names */
+            font-weight: bold;
+            width: 50%;
+        }
+    }
